@@ -1,18 +1,26 @@
 var WebSocketServer = require('websocket').server;
 var http = require('http');
 
+var express = require('express');
+var app = express();
 
-// Create a simple web server that returns the same response for any request
-var server = http.createServer(function(request,response){
-    response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.end("This is the node.js HTTP server.");
+
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
+
+http.createServer(app).listen(app.get('port') ,app.get('ip'), function () {
+    console.log("✔ Express server listening at %s:%d ", app.get('ip'),app.get('port'));
+    server();
 });
+
+
+
 
 server.listen(8080,function(){
     console.log('Server has started listening on port 8080');
 });
 
-app.set('ipaddr', http);
+
 
 var wsServer = new WebSocketServer({
     httpServer:server,
