@@ -11,6 +11,8 @@ server.listen(8080,function(){
     console.log('Server has started listening on port 8080');
 });
 
+app.set('ipaddr', server_ip_address);
+
 var wsServer = new WebSocketServer({
     httpServer:server,
     autoAcceptConnections: false        
