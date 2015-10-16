@@ -1,6 +1,7 @@
 var WebSocketServer = require('websocket').server;
 var http = require('http');
 
+
 // Create a simple web server that returns the same response for any request
 var server = http.createServer(function(request,response){
     response.writeHead(200, {'Content-Type': 'text/plain'});
@@ -11,7 +12,7 @@ server.listen(8080,function(){
     console.log('Server has started listening on port 8080');
 });
 
-app.set('ipaddr', server_ip_address);
+app.set('ipaddr', http);
 
 var wsServer = new WebSocketServer({
     httpServer:server,
