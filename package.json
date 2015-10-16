@@ -3,7 +3,7 @@
     "name": "LastColony"
   , "version": "0.0.1",
   "main": "js/server.js",
-  , "private": false ,
+  "private": false ,
    "dependencies": {
    "websocket": ">0"
       }
