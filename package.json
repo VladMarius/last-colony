@@ -1,6 +1,8 @@
 {
+    
     "name": "LastColony"
-  , "version": "0.0.1"
+  , "version": "0.0.1",
+  "main": "js/server.js",
   , "private": false 
   , "dependencies": {
    "websocket": ">0"
